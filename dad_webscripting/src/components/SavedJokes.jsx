@@ -82,11 +82,14 @@ const SavedJokes = () => {
                             {/* Here we are resuing the map method to render the list of jokes that the user has saved, using the same logic as the home page map of jokes. */}
                             {savedJokes.map((joke) => (
                                 <li
+                                // The key attribute is a unique identifier for each list item. In our the savedjokes array, the id of each joke is used as the key.
                                     key={joke.id}
                                     className="p-6 border-2 border-black hover:bg-gray-100 transition-transform transform hover:scale-105 flex justify-between items-center"
                                 >
+                                    {/* This is our joke text */}
                                     <p className="text-lg font-bold">{joke.joke}</p>
                                     <button
+                                    // When the remove joke button is clicked, the remove joke function is called with the id of the joke that was clicked. Removing the joke from the savedjokes array and updating the local storage.
                                         onClick={() => removeJoke(joke.id)}
                                         className="px-6 py-3 text-lg font-bold bg-red-500 text-white border-2 border-black hover:bg-red-600 hover:scale-105 transition-transform"
                                     >
